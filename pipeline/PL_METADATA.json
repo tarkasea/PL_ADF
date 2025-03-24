@@ -1,0 +1,32 @@
+{
+	"name": "PL_METADATA",
+	"properties": {
+		"activities": [
+			{
+				"name": "Get Metadata_movie",
+				"type": "GetMetadata",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"dataset": {
+						"referenceName": "SQLSRV_LOOKUP",
+						"type": "DatasetReference"
+					},
+					"fieldList": [
+						"columnCount"
+					]
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2025-03-19T02:51:40Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

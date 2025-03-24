@@ -1,0 +1,17 @@
+{
+	"name": "SQLSRV_LOOKUP",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SqlServerADLS",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "config"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

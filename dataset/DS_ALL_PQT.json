@@ -1,0 +1,35 @@
+{
+	"name": "DS_ALL_PQT",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_ADLS",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": ".parquet",
+				"folderPath": "input",
+				"fileSystem": "source"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": [
+			{
+				"name": "student_id",
+				"type": "INT32"
+			},
+			{
+				"name": "subject",
+				"type": "UTF8"
+			},
+			{
+				"name": "marks",
+				"type": "INT32"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

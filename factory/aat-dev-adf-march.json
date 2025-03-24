@@ -1,0 +1,9 @@
+{
+	"name": "aat-dev-adf-march",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "d5675307-48f7-499a-8018-070c92a3ace6",
+		"tenantId": "15540ce1-70c5-44d9-a3db-81121787d132"
+	}
+}

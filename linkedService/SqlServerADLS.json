@@ -1,0 +1,22 @@
+{
+	"name": "SqlServerADLS",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"description": "sql server to adls",
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"server": "LAPTOP-I6CN15Q9\\SQLEXPRESS",
+			"database": "demodb",
+			"encrypt": "optional",
+			"trustServerCertificate": false,
+			"authenticationType": "SQL",
+			"userName": "teacher",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiJhODU3ZjAwNS0xNjFjLTQwNzQtYTYxZi0yNzAxZjg4OTllZjQiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "integrationRuntimeForMysql",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

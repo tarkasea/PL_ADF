@@ -1,0 +1,64 @@
+{
+	"name": "PL_LOOKUP_FILTER",
+	"properties": {
+		"activities": [
+			{
+				"name": "Lookup_movies_csv",
+				"type": "Lookup",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"dataset": {
+						"referenceName": "DS_MOVIES_FILTER",
+						"type": "DatasetReference"
+					},
+					"firstRowOnly": false
+				}
+			},
+			{
+				"name": "FilterMoviesCSV",
+				"type": "Filter",
+				"dependsOn": [
+					{
+						"activity": "Lookup_movies_csv",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@activity('Lookup_movies_csv').output.value",
+						"type": "Expression"
+					},
+					"condition": {
+						"value": "@equals(item().genres, 'Action')",
+						"type": "Expression"
+					}
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2025-03-19T02:51:40Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
